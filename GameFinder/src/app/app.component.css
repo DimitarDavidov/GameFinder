@@ -1,0 +1,5 @@
+.Main{
+    background-image: url('/GameFinder/src/assets/backround.jpg');
+    background-size: cover;
+    min-height: 100vh;
+}
