@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserRoutingModule } from './user-routing.module';
 import { RouterModule } from '@angular/router';
+import { GameRoutingModule } from '../game/game-routing.module';
 
 
 
@@ -14,7 +15,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    UserRoutingModule,
+    GameRoutingModule,
     RouterModule
   ]
 })
