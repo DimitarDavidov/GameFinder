@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserRoutingModule } from './user-routing.module';
 import { RouterModule } from '@angular/router';
 import { GameRoutingModule } from '../game/game-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,7 +17,8 @@ import { GameRoutingModule } from '../game/game-routing.module';
   imports: [
     CommonModule,
     GameRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ]
 })
 export class UserModule { }
