@@ -34,7 +34,7 @@
   }
   
   .navbar ul li a {
-    color: #fff;
+    color: rgb(29, 95, 194);
     font-size: x-large;
     text-decoration: none;
     transition: color 0.3s;

@@ -1,0 +1,49 @@
+.catalog-section {
+  text-align: center;
+}
+
+.games-catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.game {
+  width: 200px;
+  background-color:  rgb(6, 11, 39);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.game img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.game h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.game button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: not-allowed;
+}
+
+.no-games {
+  margin-top: 20px;
+}
+
+.catalog-section h1 {
+  color: rgb(29, 95, 194); 
+  background-color:  rgb(6, 11, 39); 
+  padding: 10px; 
+  border-radius: 5px;
+}
