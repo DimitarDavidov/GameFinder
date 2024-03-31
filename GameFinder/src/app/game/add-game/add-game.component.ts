@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/auth.service'; // Import the AuthService
 import { GameService } from '../../game.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-game',
@@ -13,12 +14,11 @@ export class AddGameComponent {
   description: string = '';
   imageUrl: string = '';
 
-  constructor(private gameService: GameService, private authService: AuthService) { } // Inject the AuthService
-
+  constructor(private gameService: GameService, private authService: AuthService, private router: Router) { }
   onSubmit(): void {
-    const currentUser = this.authService.getCurrentUser(); // Get the current user
+    const currentUser = this.authService.getCurrentUser(); 
     if (!currentUser) {
-      console.error('No user logged in.'); // Handle error if no user is logged in
+      console.error('No user logged in.'); 
       return;
     }
 
@@ -27,13 +27,13 @@ export class AddGameComponent {
       year: this.year,
       description: this.description,
       imageUrl: this.imageUrl,
-      ownerId: currentUser.uid // Include the ownerId in the game data
+      ownerId: currentUser.uid,
     };
 
     this.gameService.addGame(gameData).subscribe(
       (response) => {
         console.log('Game added successfully:', response);
-        // Optionally, you can navigate to a different page after adding the game
+        this.router.navigate(['/home']);
       },
       (error) => {
         console.error('Error adding game:', error);

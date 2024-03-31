@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AuthService } from '../../auth.service';
 import { Observable } from 'rxjs';
@@ -17,7 +17,8 @@ export class GameDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private firestore: AngularFirestore,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -41,8 +42,12 @@ export class GameDetailsComponent implements OnInit {
   }
 
   deleteGame(): void {
-  }
-
-
+    this.firestore.collection('games').doc(this.gameId).delete().then(() => {
+      console.log('Game deleted successfully');
+      this.router.navigate(['/home']); 
+    }).catch((error) => {
+      console.error('Error deleting game: ', error);
+  })
+}
   
 }
