@@ -17,8 +17,12 @@ export class HomeComponent implements OnInit {
   }
 
   getGames(): void {
-    this.firestore.collection('games').valueChanges().subscribe((games: any[]) => {
-      this.games = games;
+    this.firestore.collection('games').snapshotChanges().subscribe((gamesSnapshot: any[]) => {
+      this.games = gamesSnapshot.map(gameSnapshot => {
+        const gameData = gameSnapshot.payload.doc.data();
+        const id = gameSnapshot.payload.doc.id;
+        return { id, ...gameData };
+      });
     });
   }
 }

@@ -47,4 +47,8 @@ export class AuthService {
   isLoggedIn(): boolean {
     return !!this.user;
   }
+
+  getCurrentUser(): firebase.User | null {
+    return this.user;
+  }
 }

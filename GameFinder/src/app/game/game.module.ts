@@ -4,6 +4,7 @@ import { AddGameComponent } from './add-game/add-game.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
 import { UserRoutingModule } from '../user/user-routing.module';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     UserRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ]
 })
 export class GameModule { 

@@ -1,1 +1,23 @@
-<p>game-details works!</p>
+<div class="details-div">
+  <section class="details-section">
+      <div class="main-info">
+          <img [src]="(game$ | async)?.imageUrl" alt="Game" height="350" width="260" />
+          <div class="details-info">
+              <h5>Title: <span>{{ (game$ | async)?.title }}</span></h5>
+              <h5>Year: <span>{{ (game$ | async)?.year }}</span></h5>
+          </div>
+      </div>
+
+      <div class="details-description">
+          <div>
+              <h1>Description:</h1>
+              <p>{{ (game$ | async)?.description }}</p>
+          </div>
+      </div>
+
+          <div class="details-buttons" *ngIf="isOwner">
+              <a routerLink="/catalog/{{ (game$ | async)?.id }}/edit"><button>Edit</button></a>
+              <button (click)="deleteGame()">Delete</button>
+          </div>
+  </section>
+</div>
