@@ -16,7 +16,7 @@
       </div>
   
       <div class="details-buttons" *ngIf="isOwner">
-        <a routerLink="/catalog/{{ (game$ | async)?.id }}/edit"><button class="edit-button">Edit</button></a>
+        <a [routerLink]="['/edit-game', gameId]"><button class="edit-button">Edit</button></a>
         <button class="delete-button" (click)="deleteGame()">Delete</button>
       </div>
     </section>

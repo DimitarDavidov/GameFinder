@@ -14,4 +14,8 @@ export class GameService {
     return from(promise);
   }
 
+  editGame(gameId: string, gameData: any): Observable<any> {
+    const promise = this.firestore.collection('games').doc(gameId).set(gameData, { merge: true });
+    return from(promise);
+  }
 }

@@ -1,0 +1,20 @@
+.contact {
+    background-color: rgb(6, 11, 39);
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 10%;
+  }
+  
+  .contact h2 {
+    color: white
+  }
+  
+  .contact-info {
+    margin-top: 10px;
+  }
+  
+  .contact-info p {
+    margin: 5px 0;
+  }
+  

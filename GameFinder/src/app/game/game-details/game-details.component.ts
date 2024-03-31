@@ -23,6 +23,7 @@ export class GameDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.gameId = this.route.snapshot.paramMap.get('id') || ''; 
+    console.log('Game ID:', this.gameId); 
     this.getGameDetails();
   }
 
@@ -32,13 +33,11 @@ export class GameDetailsComponent implements OnInit {
       if (game) {
         this.isOwner = game.ownerId === this.authService.user?.uid; 
       }
-      const regex = /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-      const match = game.trailerUrl.match(regex);
-      console.log(match)
     });
   }
 
   editGame(): void {
+    this.router.navigate(['/edit', this.gameId]);
   }
 
   deleteGame(): void {
