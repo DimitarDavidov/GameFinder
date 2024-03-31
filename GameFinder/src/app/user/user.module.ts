@@ -6,19 +6,22 @@ import { UserRoutingModule } from './user-routing.module';
 import { RouterModule } from '@angular/router';
 import { GameRoutingModule } from '../game/game-routing.module';
 import { FormsModule } from '@angular/forms';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LogoutComponent
   ],
   imports: [
     CommonModule,
     GameRoutingModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    UserRoutingModule
   ]
 })
 export class UserModule { }
