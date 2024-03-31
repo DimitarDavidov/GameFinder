@@ -6,6 +6,7 @@
       </a>
     </div>
     <ul>
+      <li><a routerLink="/contact">Contact</a></li>
       <ng-container *ngIf="!authService.isLoggedIn()">
         <li><a routerLink="/register">Register</a></li>
         <li><a routerLink="/login">Login</a></li>
@@ -16,7 +17,6 @@
         <li><a routerLink="/add-game">Add Game</a></li>
       </ng-container>
 
-      <li><a routerLink="/contact">Contact</a></li>
     </ul>
   </nav>
 </header>
