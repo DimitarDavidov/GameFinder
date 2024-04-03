@@ -11,12 +11,19 @@ export class RegisterComponent {
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
+  passMatch: boolean = false;
+  allRequired: boolean = false;
 
   constructor(private auth: AngularFireAuth, private router: Router) { }
 
   registerUser(): void {
     if (this.password !== this.confirmPassword) {
-      alert('Passwords do not match!');
+      this.passMatch = true
+      return;
+    }
+
+    if(this.email.trim() === "", this.password.trim() === ''){
+      this.allRequired = true
       return;
     }
 

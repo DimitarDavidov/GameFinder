@@ -16,6 +16,11 @@
     <div class="form-group">
       <label for="imageUrl">Image URL:</label>
       <input type="text" id="imageUrl" name="imageUrl" class="form-control" required [(ngModel)]="imageUrl">
+      <ng-container *ngIf="allRequired">
+        <div class="requiredError">
+          All fields required!
+        </div>
+      </ng-container>
     </div>
     <button type="submit" class="btn btn-primary">Add Game</button>
   </form>

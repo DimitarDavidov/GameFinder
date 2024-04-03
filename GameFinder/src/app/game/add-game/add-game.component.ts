@@ -13,9 +13,16 @@ export class AddGameComponent {
   year: number = 0;
   description: string = '';
   imageUrl: string = '';
+  allRequired: boolean = false;
 
   constructor(private gameService: GameService, private authService: AuthService, private router: Router) { }
   onSubmit(): void {
+
+    if(this.title.trim() === "", this.description.trim() === '', this.year === 0, this.description === '', this.imageUrl ===''){
+      this.allRequired = true
+      return;
+    }
+
     const currentUser = this.authService.getCurrentUser(); 
     if (!currentUser) {
       console.error('No user logged in.'); 

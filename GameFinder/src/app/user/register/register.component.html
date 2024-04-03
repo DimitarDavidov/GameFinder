@@ -12,6 +12,14 @@
     <div class="form-group">
       <label for="confirm-password">Confirm Password:</label>
       <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" [(ngModel)]="confirmPassword" required>
+      <ng-container *ngIf="passMatch">
+        <div class="error">Password missmatch!</div>
+      </ng-container>
+      <ng-container *ngIf="allRequired">
+        <div class="requiredError">
+          All fields required!
+        </div>
+      </ng-container>
     </div>
     <button type="submit">Register</button>
   </form>

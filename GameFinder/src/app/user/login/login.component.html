@@ -8,6 +8,12 @@
     <div class="form-group">
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" placeholder="Enter your password" [(ngModel)]="password" required>
+      
+      <ng-container *ngIf="allRequired">
+        <div class="requiredError">
+          All fields required!
+        </div>
+      </ng-container>
     </div>
     <button type="submit">Login</button>
   </form>
